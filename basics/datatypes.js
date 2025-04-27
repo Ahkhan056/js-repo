@@ -1,8 +1,10 @@
  " use strict "   // treat all code as new version of JS
 
- alert(4+5) //this is ok but in browser and now we use nodeJs so its not ok and we use console.log also we use it but later for some other things..
+//  alert(4+5)
 
- console.log("hello world")
+//  //this is ok but in browser and now we use nodeJs so its not ok and we use console.log also we use it but later for some other things..
+
+ 
 
  console.log("abdullah")
 
@@ -24,5 +26,6 @@
 
 // BigInt => for large numbers like 1234567890123456789012345678901234567890..
 
-console.log (typeof  null);
+console.log (typeof  null );
+console.log(typeof undefined );
 
