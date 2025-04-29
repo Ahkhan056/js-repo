@@ -5,8 +5,8 @@
 //simple converstion in java and also this is best practice to use.
 
 
-console.log("2">1);
-console.log("02">1);
+console.log("2">1); // output is ture coz the "2" is converted from string toNumber (2) and 2 > 1 so output =true 
+console.log("02">1); // same case as above ...
 
 console.log(null>0);
 console.log(null==0);  // comparison >= and equality operators are different things in js .. as there is no type conversion in equality operator..
