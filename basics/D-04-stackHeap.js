@@ -12,7 +12,7 @@ console.log(name  )  // ali
 console.log(anotherName) // ahmed
 // in stack memory
 // name is stored in stack memory and anotherName is also stored in stack memory
-// but anotherName is a copy of name so when we change name it does not affect anotherName
+// but anotherName is a copy of name so when we change anothername it does not affect Name..
 // so in stack memory we have two copies of name
 // but in heap memory we have only one copy of name
 
