@@ -76,13 +76,14 @@ console.log(jsUser);
     }
 
     jsUser.greetings2= function(){
-        console.log(`hello jsUser,${this.name}`);
+        console.log(`hello jsUser, ${this.name}`);
        
     }
 
     console.log(jsUser.greetings);  // it will print  [Function (anonymous)]
 
     console.log(jsUser.greetings());
+    console.log(jsUser.greetings2());
 
 
 

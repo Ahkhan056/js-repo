@@ -65,3 +65,8 @@ console.log(arr2); // it will print the flattened array.
 
         console.log(arr3); // it will print the array of variables.
     
+
+        // if we want to  merge 2 objects so unlike array we  dont do this => obj3={obj1, obj2}.
+        const obj3= Object.assign({},obj1,obj2); // it will merge the 2 objects and create a new object.
+        console.log(obj3); // it will print the merged object.
+
