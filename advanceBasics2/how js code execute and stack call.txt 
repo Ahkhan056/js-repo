@@ -1,0 +1,79 @@
+{} js file =>  first of all global execution context refered to => (this).
+
+interview question? browser and node environment deal with this diff as in browser the this comes with window object and in ide this return {} in strict mode or undefined . 
+
+1.gec.
+2. function/ functional execution context.
+3. mainly used in mongoose like => eval 
+
+
+execution phase /run in 2 phases.
+
+1. Memory creation phase.
+2. execution phase.
+
+suppose an example =>
+let val1=10;
+let val2=20;
+
+function addTwo(val1,val2){
+    let total= val1+val2;
+
+    return total;
+}
+
+let res1= addTwo(val1,val2);
+let val2= addTwo(12,32);
+
+
+=> first of all this global execution run and allocate it to this.
+then these steps run=>
+
+1 =>
+    only reserve space for the variables etc and assign undefinedto it. 
+    e.g=> val1=>undefined
+        val2=undefined
+        addTwo=> definition of function.
+        res1=undefined
+        res2=> undefined
+
+2. =>
+    execution phase=>
+    val1=10; assigns values to it in executionphase.
+    for all variablessame work 
+    and for functions it create a new window and itself new environment variables and executionphase.
+-------------------------------------
+ let res1= addTwo(val1,val2);
+for function new these =>
+val1= undefined
+val2=undefined
+total=undefined
+
+executionphase=>
+val1=10
+val2=20
+total=30
+
+this is now returned to global context 
+
+!!!!! -- Important -- !!!!
+ after it completes it working and add two numbers the new environment terminates.
+ --------------------------------------------------
+
+ after this we have =>
+let val2= addTwo(12,32);
+
+for these the function called and the new executionphase and environment variables created and done same work as above.
+
+
+-------- call stack --------
+
+!   three() !
+!   two()   !
+! one()   !=>one() out after execution.
+!-------- !
+ global ex
+!---------! => here followed the last in first out rule..
+three inside two and two inside one. =>
+  first three ill out then the two then one. we can visualize it in browser. 
+
