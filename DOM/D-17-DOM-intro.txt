@@ -16,7 +16,7 @@ Let’s say you have a web page with this HTML:
 
 html
 
-
+z
 <h1 id="myTitle">Hello, World!</h1>
 <button onclick="changeText()">Click Me!</button>
 You can use JavaScript to change the text of the <h1> when someone clicks the button. Here’s how:
