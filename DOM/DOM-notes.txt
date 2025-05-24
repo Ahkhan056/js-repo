@@ -1,0 +1,82 @@
+Notes on JavaScript and DOM Manipulation
+1. What is the DOM?
+The DOM (Document Object Model) is like a map of a web page that JavaScript can use to interact with elements (like buttons, text, images, etc.).
+It represents the structure of an HTML page as a tree of objects, where each element (like <div>, <p>, etc.) is a node.
+2. Capturing and Manipulating Elements (01:45)
+JavaScript can "find" and change elements on a web page.
+You can capture elements (like a button or a paragraph) and modify their content, style, or behavior.
+Example: Change the text of a button or make a div disappear.
+3. Accessing Elements in the DOM (05:19)
+To work with elements, you need to select them first. JavaScript provides different ways (selectors) to find elements:
+By ID: document.getElementById("myId") – Finds an element with a specific ID.
+By Class: document.getElementsByClassName("myClass") – Finds all elements with a class.
+By Tag: document.getElementsByTagName("p") – Finds all <p> tags.
+Query Selectors:
+document.querySelector(".myClass") – Finds the first element matching a CSS selector.
+document.querySelectorAll(".myClass") – Finds all elements matching a CSS selector.
+4. Getting Attributes (07:02)
+Elements have attributes like id, class, src, or href.
+Use element.getAttribute("attributeName") to get the value of an attribute.
+Example: img.getAttribute("src") returns the URL of an image.
+5. InnerHTML vs. TextContent (12:08)
+innerHTML:
+Gets or sets the HTML content inside an element, including tags.
+Example: <p>Hello <b>world</b></p> – innerHTML includes the <b> tag.
+Use it to add or change HTML inside an element.
+textContent:
+Gets or sets only the visible text, ignoring HTML tags.
+Example: For <p>Hello <b>world</b></p>, textContent returns just Hello world.
+Safer to use when you only want text, not HTML.
+6. HTMLCollection vs. NodeList (16:00, 22:50, 32:27, 37:58, 40:00)
+HTMLCollection:
+A collection of elements returned by methods like getElementsByClassName or getElementsByTagName.
+It’s “live,” meaning it updates automatically if the DOM changes.
+Example: document.getElementsByClassName("myClass") returns an HTMLCollection.
+NodeList:
+A collection returned by querySelectorAll.
+It’s usually “static,” meaning it doesn’t update automatically.
+Example: document.querySelectorAll(".myClass") returns a NodeList.
+Key Difference:
+HTMLCollection is live, NodeList is usually static.
+You can loop through both, but NodeList works better with modern methods like forEach.
+7. QuerySelector vs. QuerySelectorAll (26:43)
+querySelector:
+Returns the first element that matches a CSS selector.
+Example: document.querySelector(".myClass") grabs the first element with myClass.
+querySelectorAll:
+Returns all elements that match a CSS selector as a NodeList.
+Example: document.querySelectorAll(".myClass") grabs all elements with myClass.
+Use querySelector for single elements, querySelectorAll for multiple.
+8. Selecting and Manipulating Elements (17:38, 21:07, 34:15)
+After selecting elements, you can manipulate them:
+Change text: element.textContent = "New text".
+Change HTML: element.innerHTML = "<b>New content</b>".
+Change styles: element.style.color = "blue".
+Add/remove classes: element.classList.add("newClass") or element.classList.remove("oldClass").
+Example: Make all paragraphs bold:
+javascript
+
+Copy
+const paras = document.querySelectorAll("p");
+paras.forEach(p => p.style.fontWeight = "bold");
+9. Converting HTMLCollection/NodeList (32:27)
+Sometimes you need to convert an HTMLCollection or NodeList to an array to use array methods (like map or filter).
+How to convert:
+javascript
+
+Copy
+const collection = document.getElementsByClassName("myClass");
+const array = Array.from(collection); // Now you can use array methods
+NodeList from querySelectorAll already supports forEach, so conversion is less common.
+10. Practical Tips for DOM Manipulation
+Use querySelector and querySelectorAll for flexibility since they work like CSS selectors.
+Be careful with innerHTML to avoid security risks (like injecting harmful code).
+Use textContent when you only need text to keep things safe.
+Test your selectors in the browser’s developer tools to ensure they target the right elements.
+Key Takeaways
+The DOM lets JavaScript interact with web pages.
+Use selectors like getElementById, querySelector, or querySelectorAll to find elements.
+Manipulate elements by changing their text, HTML, styles, or attributes.
+Understand the difference between HTMLCollection (live) and NodeList (static).
+Use textContent for safe text changes, and innerHTML for adding HTML.
+Convert collections to arrays if you need advanced array methods.
